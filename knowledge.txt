@@ -1,0 +1,43 @@
+What is Blockchain?
+- 1991 by Stuart Haber and Scott Stinnett
+
+WHat is the Block?
+ 1. Data
+ 2. Previous Hash: asjd83h3dsfd
+ 3. Hash: asdka821hd
+
+First block is Genesis Block - Previous Hash 000000000000
+
+5 core concepts
+- Mining
+- Distributed P2P Network
+- Consensus Protocol: giao thức đồng nhất
+- Immutable Ledger
+- Hash Cryptography
+
+Understanding SHA256 Hash
+- contain 64 characters, 1 characters is one of 0, 1, 2, ..., F
+- one way
+- Deterministic
+- fast computation
+- the avalanche effect
+- must withstand collisions
+
+Why haven't any SHA256 collisions been found yet?
+2015 Bitcoin was computing 300 quadrillion SHA256 hashes per second. that 300x10^15 << 2^256
+
+Mining:
+- Currency Hash from {id Block, Data, previous Hash, Nonce}
+- hidden field => Nonce (stand for "chỉ sử dụng 1 lần "), it just a number to change hash 
+
+Bản chất của mining
+- mỗi block đêù có 1 hash để nhận dạng
+- hash thật ra là 1 số thập lục phân từ 000...0 đến fff...f
+- Target của mỗi crypto sẽ là 1 số trong khoảng đó và nhiệm vụ của miner là thay đổi field nonce để cùng với block_id, Data, và prev hash tại ra 1 hash < target, mà chưa phải là hash của block khác
+
+Khả năng chịu lỗi Byzantine
+
+Consensus Protocol
+1. proof-of-work PoW (Bitcoin & Ethereum)
+  khi conflict trong qúa trình mining thì chuỗi mới dài hơn sẽ là chuỗi chiến thắng và các block cạnh tranh thất bại sẽ trở thành orphan block. Trở nên free mà tiếp tục được mining
+2. proof-of-stake PoS
